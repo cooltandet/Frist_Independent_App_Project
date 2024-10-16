@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#8071D2">
+
+    <!-- Timer -->
+    <TextView
+        android:id="@+id/textViewStopwatchDisplay"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        android:text="00:00.00"
+        android:textColor="#000000"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/Layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewClockTop"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!-- StopWatch Control Buttons -->
+
+    <Button
+        android:id="@+id/buttonStartStopwatch"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="80dp"
+        android:onClick="startStopwatch"
+        android:text="Start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewStopwatchDisplay" />
+
+    <Button
+        android:id="@+id/buttonPauseStopWatch"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="80dp"
+        android:onClick="pauseStopWatch"
+        android:text="Pause"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewStopwatchDisplay" />
+
+    <Button
+        android:id="@+id/buttonResetStopwatch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:onClick="resetStopwatch"
+        android:text="Reset"
+        app:layout_constraintBottom_toTopOf="@+id/Layout"
+        app:layout_constraintEnd_toStartOf="@+id/buttonPauseStopWatch"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/buttonStartStopwatch"
+        app:layout_constraintTop_toBottomOf="@+id/textViewStopwatchDisplay" />
+
+    <!-- Title for StopWatch -->
+
+
+    <TextView
+        android:id="@+id/textViewClockTop"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:background="#330072"
+        android:gravity="center"
+        android:text="StopWatch"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Bottom bar layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/Layout"
+        android:layout_width="0dp"
+        android:layout_height="114dp"
+        android:background="#000000"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <Button
+            android:id="@+id/buttonStopwatch"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:backgroundTint="#9C27B0"
+            app:icon="@drawable/stopwatch_image"
+            app:iconGravity="top"
+            app:iconSize="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewStopwatch"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:gravity="center"
+            android:text="Stopwatch"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/buttonStopwatch"
+            app:layout_constraintStart_toStartOf="@+id/buttonStopwatch"
+            app:layout_constraintTop_toBottomOf="@+id/buttonStopwatch" />
+
+        <Button
+            android:id="@+id/buttonTimer"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:onClick="Timer"
+            app:icon="@drawable/timer_image"
+            app:iconGravity="top"
+            app:iconSize="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewTimer"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:gravity="center"
+            android:text="Timer"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/buttonTimer"
+            app:layout_constraintStart_toStartOf="@+id/buttonTimer"
+            app:layout_constraintTop_toBottomOf="@+id/buttonTimer" />
+
+        <Button
+            android:id="@+id/buttonClock"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:onClick="WorldClock"
+            app:icon="@drawable/world_clock_image"
+            app:iconGravity="top"
+            app:iconSize="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewWorldClock"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:gravity="center"
+            android:text="World Clock"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/buttonClock"
+            app:layout_constraintStart_toStartOf="@+id/buttonClock"
+            app:layout_constraintTop_toBottomOf="@+id/buttonClock" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
